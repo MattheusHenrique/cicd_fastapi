@@ -1,0 +1,67 @@
+name: Continuos Integration
+
+on: pull_request
+
+jobs:
+  test:
+    name: Run Tests and Coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+        working-directory: ./  
+
+      - name: Run tests
+        run: |
+          pytest 
+        working-directory: ./
+
+      - name: Coverage
+        run: |
+          coverage run -m pytest
+          coverage report
+          coverage xml
+        working-directory: ./ 
+
+      - name: Upload Coverage
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: ./coverage.xml
+
+  linter:
+    name: Lint, and Format
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+      working-directory: ./
+
+    - name: Lint Code
+      run: |
+        ruff .
+      working-directory: ./
+
+    - name: Format Code
+      run: |
+        black --check .
+      working-directory: ./
