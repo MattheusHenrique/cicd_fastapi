@@ -23,7 +23,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest --cov=src --cov-report=xml
+          pytest 
         working-directory: ./
 
       - name: Coverage
