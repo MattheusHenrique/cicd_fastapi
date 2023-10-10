@@ -6,11 +6,15 @@
 
 ## Obejtivos
 
-- Criar um app python com fastapi e testes unitários com pytest e cobertura de testes com pytest-cov
-- Criar um Dockerfile para o app
-- Criar um workflow para CI/CD com github actions
-- Instalar dependências do projeto
-- Rodar os testes
-- Verificar linter com ruff
-- Verificar formatação com black
-- Criar um workflow para deploy no dockerhub
+- [x] Criar um app python com fastapi e testes unitários com pytest e cobertura de testes com pytest-cov
+- [x] Criar um Dockerfile para o app
+- [x] Criar um workflow para CI/CD com github actions
+- [x] Instalar dependências do projeto
+- [x] Rodar os testes
+- [x] Verificar linter com ruff
+- [x] Verificar formatação com black
+- [x] Criar um workflow para deploy no dockerhub
+
+- [] Melhorar o workflow de CI/CD
+- [] Adicionar diferenças entre ambiente de dev e prod
+- [] Adicionar deploy no heroku
