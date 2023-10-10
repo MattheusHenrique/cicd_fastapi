@@ -63,5 +63,5 @@ jobs:
 
     - name: Format Code
       run: |
-        black check .
+        black --check .
       working-directory: ./
