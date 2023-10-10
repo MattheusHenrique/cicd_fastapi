@@ -17,4 +17,5 @@
 
 - [] Melhorar o workflow de CI/CD
 - [] Adicionar diferenças entre ambiente de dev e prod
+- [] Adicionar tags nos deploys
 - [] Adicionar deploy no heroku
